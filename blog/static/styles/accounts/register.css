@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+.signup{
+    height: 100vh;    
+}
+.signbox{
+    width: 80%;
+    height: 500px;
+    background-color: #182337;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+.sign-text h1{
+    text-align: left;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.sign-text h1 span{
+    color: #ffff00;
+    font-family: 'Boogaloo', sans-serif;
+}
+form{
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+.signbox input{
+    width: 100%;
+    margin: 7px 0;
+    padding: 10px 0;
+    text-align: center;
+    outline: none;
+    border: 2px solid #ffff00;
+    border-radius: 10px;
+    font-size: 17px;
+}
+.formbtn{
+    text-align: center;
+}
+.signbox button{
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ffff00;
+    color: #000;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.redirect{
+    margin: 15px 0;
+    text-align: center;
+}
+

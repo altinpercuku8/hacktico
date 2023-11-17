@@ -1,0 +1,22 @@
+{% extends '../components/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/components/create.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="create-section">
+    <div class="left">
+        <h2>Start <span>posting</span> with <span>us</span></h2>
+    </div>
+    <div class="right">
+        <form method="post" style="padding: 100px;">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Post</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

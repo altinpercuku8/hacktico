@@ -1,0 +1,31 @@
+{% extends 'blog/components/base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/accounts/register.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="signup">
+        <div class="signbox">
+            <div class="sign-text">
+                <h1>Register now and start posting <span>awesome stuff !</span></h1>
+            </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        {{ field.label }}
+                        {{ field }}
+                    {% endfor %}
+                    <div class="formbtn">
+                        <button type="submit" name="createaccount">Sign in</button>
+                    </div>
+                    <p class="redirect">
+                        Already have an account, <a href="{% url 'login' %}">login</a>!
+                    </p>
+                </form>
+        </div>
+    </div> 
+{% endblock %}

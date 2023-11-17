@@ -1,0 +1,36 @@
+{% extends 'blog/components/base.html' %}
+{% load static %}
+
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/accounts/login.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <div class="signup">
+        <div class="signbox">
+            <div class="sign-text">
+                <h1>Login</h1>
+            </div>
+                <form method="POST">
+                    {% csrf_token %}
+                    {% for message in messages %}
+                        {% if message.tags == 'success' %}
+                            <p id="messages" class="success">{{ message }}</p>
+                        {% elif message.tags == 'error' %}
+                            <p id="messages" class="error">{{ message }}</p>
+                        {% endif %}
+                    {% endfor %}
+                    <input type="text" name="username" id="username" required placeholder="Username">
+                    <input type="password" name="password" id="password" required placeholder="Password">
+                    <div class="formbtn">
+                        <button type="submit" name="createaccount">Log in</button>
+                    </div>
+                    <p class="redirect">
+                        Don't have an account, <a href="{% url 'register' %}">register</a>!
+                    </p>
+                </form>
+        </div>
+    </div> 
+{% endblock %}

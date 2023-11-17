@@ -1,0 +1,70 @@
+{% extends 'blog/components/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/home.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="information">
+    <div class="box">
+        <div class="left">
+            <img src="{% static 'images/programeri.png' %}" alt="">
+        </div>
+        <div class="right">
+            <h1>
+                The #1 cybersecurity<br>
+                <span>upskilling platform.</span>
+            </h1>
+            <p>
+                Hacktico gives individuals, businesses and universities the tools they need to
+                continuously improve their cybersecurity capabilities — <span> all in one place.</span>
+            </p>
+        </div>
+    </div>
+    </section>
+    <section id="ideas">
+        <div class="top-text">
+            <h2>Why <span>Hacktico</span>?</h2>
+        </div>
+        <div class="boxes">
+            <div class="idea-box">
+                <img src="{% static 'images/why1.png' %}" alt="why1">
+                <div class="idea-text">
+                    <h3>
+                        Create and share your ideas with others
+                    </h3>
+                </div>
+            </div>
+            <div class="idea-box">
+                <img src="{% static 'images/why2.png' %}" alt="why2">
+                <div class="idea-text">
+                    <h3>
+                        Always learn by doing
+                    </h3>
+                </div>
+            </div>
+            <div class="idea-box">
+                <img src="{% static 'images/why3.png' %}" alt="why3">
+                <div class="idea-text">
+                    <h3>
+                        Capture the flag
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="postimet">
+        <div class="post-left">
+            <h2>Create cool posts for others to see, {{ user }}</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non veniam ut, dicta necessitatibus earum voluptates molestias repellat, itaque iste corrupti quam. Consequatur voluptas iusto eligendi libero! Assumenda delectus cum earum.
+                Ipsum cum repellat iure dolor vitae quaerat laboriosam obcaecati reprehenderit incidunt assumenda dolorum ullam unde quibusdam, totam voluptatem fugit porro corporis tenetur deserunt sed molestiae amet asperiores magnam nam? Magnam!
+                Rerum recusandae doloribus omnis accusantium magnam beatae voluptas quaerat dolorum ut obcaecati sunt exercitationem, est, ad, veniam adipisci optio aperiam eaque ipsam quia laboriosam eos rem. Possimus id quos earum!
+            </p>
+        </div>
+        <div class="post-right">
+            <img src="{% static 'images/postimet.png' %}" alt="">
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,23 @@
+button{
+    background-color: red;
+}
+
+.create-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.left , .right{
+    flex-basis: 50%;
+    margin: 0 auto;
+}
+
+.left h2{
+    color: #00102d;
+    text-align: center;
+}
+
+.left h2 span{
+    color: #ffff00;
+}

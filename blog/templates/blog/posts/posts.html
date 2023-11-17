@@ -1,0 +1,17 @@
+{% extends 'blog/components/base.html' %}
+
+{% if user.is_authenticated %}
+    {% block content %}
+        {% for post in posts %}
+        <hr>
+        <div class="posti">
+            {{ post.title }}<br>
+            {{ post.content }}<br>
+            <b>{{ post.author }}</b>
+        </div>
+        <hr>
+        {% endfor %}
+    {% endblock %}
+{% else %}
+    {% url 'home_view' %}
+{% endif %}

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Signika&display=swap');
+
+body{
+    background-color: #00102d;
+}
+
+/* TOP HEADER */
+
+.box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+}
+.left, .right{
+    flex-basis: 50%;
+}
+.left img{
+    width: 90%;
+}
+.right h1{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: bolder;
+    font-size: 40px;
+}
+.right span{
+    font-family: 'Signika', sans-serif;
+    color: yellow;
+}
+.right p{
+    font-family: 'Signika', sans-serif;
+    color: white;
+    font-size: 17px;
+    margin:10px 0 0 15px;
+}
+
+/* IDEAS SECTIONS */
+
+#ideas{
+    width: 100%;
+    background-color: #fff;
+    height: 500px;
+    text-align: center;
+}
+
+.top-text{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.top-text h2{
+    text-transform: uppercase;
+    font-size: 30px;
+}
+.top-text h2 span{
+    color: #182337;
+}
+.boxes{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+.idea-box{
+    background-color: #1f2e4b;
+    border-radius: 8px;
+    width: 260px;
+    height: 320px;
+}
+.idea-box img{
+    padding: 10px;
+    width: 250px;
+}
+.idea-text h3{
+    font-family: 'Signika', sans-serif;
+    padding: 5px;
+    color: #fff;
+}
+
+
+/* Post Section */
+
+#postimet{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 50px 20px;
+}
+.post-left, .post-right{
+    flex-basis: 50%;
+}
+.post-right{
+    text-align: center;
+}
+.post-right img{
+    width: 70%;
+}
+.post-left h2{
+    color: #ffff00;
+    font-family: 'Signika', sans-serif;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+.post-left p{
+    color: #fff;
+    margin-left: 5px;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+}
+@media screen and (max-width:768px){
+    .box{
+        flex-direction: column-reverse;
+    }
+    .left, .right{
+        flex-basis: 100%;
+        padding: 10px;
+    }
+    .right{
+        padding: 20px;
+    }
+    .right p {
+        margin: 0;
+    }
+    /* Idea boxes */
+    #ideas{
+        flex-direction: column;
+        height: auto;
+    }
+    .idea-box{
+        margin: 10px 0;
+    }
+    /* Post section */
+    .post-left, .post-right{
+        flex-basis: 100%;
+    }
+    .post-right img{
+        width: 100%;
+        margin: 20px 0;
+    }
+}
