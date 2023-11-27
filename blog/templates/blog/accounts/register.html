@@ -8,9 +8,9 @@
 
 
 {% block content %}
-    <div class="signup">
-        <div class="signbox">
-            <div class="sign-text">
+    <div class="ap-signup">
+        <div class="ap-signbox">
+            <div class="ap-sign-text">
                 <h1>Register now and start posting <span>awesome stuff !</span></h1>
             </div>
                 <form method="POST">
@@ -19,10 +19,10 @@
                         {{ field.label }}
                         {{ field }}
                     {% endfor %}
-                    <div class="formbtn">
+                    <div class="ap-formbtn">
                         <button type="submit" name="createaccount">Sign in</button>
                     </div>
-                    <p class="redirect">
+                    <p class="ap-redirect">
                         Already have an account, <a href="{% url 'login' %}">login</a>!
                     </p>
                 </form>

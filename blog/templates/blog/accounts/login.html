@@ -8,26 +8,30 @@
 
 
 {% block content %}
-    <div class="signup">
-        <div class="signbox">
-            <div class="sign-text">
+    <div class="ap-signup">
+        <div class="ap-signbox">
+            <div class="ap-sign-text">
                 <h1>Login</h1>
             </div>
                 <form method="POST">
                     {% csrf_token %}
                     {% for message in messages %}
                         {% if message.tags == 'success' %}
-                            <p id="messages" class="success">{{ message }}</p>
+                        <div class="alert alert-success text-center" role="alert">
+                            {{ message }}
+                          </div>
                         {% elif message.tags == 'error' %}
-                            <p id="messages" class="error">{{ message }}</p>
+                        <div class="alert alert-warning text-center" role="alert">
+                            {{ message }}
+                          </div>
                         {% endif %}
                     {% endfor %}
                     <input type="text" name="username" id="username" required placeholder="Username">
                     <input type="password" name="password" id="password" required placeholder="Password">
-                    <div class="formbtn">
+                    <div class="ap-formbtn">
                         <button type="submit" name="createaccount">Log in</button>
                     </div>
-                    <p class="redirect">
+                    <p class="ap-redirect">
                         Don't have an account, <a href="{% url 'register' %}">register</a>!
                     </p>
                 </form>

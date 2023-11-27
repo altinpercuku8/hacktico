@@ -4,60 +4,60 @@ body{
     background-color: #00102d;
 }
 
-/* TOP HEADER */
+/* PJESA E SIPERME (HEADER) */
 
-.box{
+.ap-box{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     margin-top: 20px;
 }
-.left, .right{
+.ap-left, .ap-right{
     flex-basis: 50%;
 }
-.left img{
+.ap-left img{
     width: 90%;
 }
-.right h1{
+.ap-right h1{
     font-family: 'Roboto', sans-serif;
     color: white;
     font-weight: bolder;
     font-size: 40px;
 }
-.right span{
+.ap-right span{
     font-family: 'Signika', sans-serif;
     color: yellow;
 }
-.right p{
+.ap-right p{
     font-family: 'Signika', sans-serif;
     color: white;
     font-size: 17px;
     margin:10px 0 0 15px;
 }
 
-/* IDEAS SECTIONS */
+/* PJESA E IDES */
 
-#ideas{
+#ap-ideas{
     width: 100%;
     background-color: #fff;
     height: 500px;
     text-align: center;
 }
 
-.top-text{
+.ap-top-text{
     width: 100%;
     text-align: center;
     padding: 20px 0;
 }
-.top-text h2{
+.ap-top-text h2{
     text-transform: uppercase;
     font-size: 30px;
 }
-.top-text h2 span{
+.ap-top-text h2 span{
     color: #182337;
 }
-.boxes{
+.ap-boxes{
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -65,26 +65,27 @@ body{
     flex-wrap: wrap;
     margin: 30px 0;
 }
-.idea-box{
+.ap-idea-box{
     background-color: #1f2e4b;
     border-radius: 8px;
     width: 260px;
     height: 320px;
 }
-.idea-box img{
+.ap-idea-box img{
     padding: 10px;
     width: 250px;
 }
-.idea-text h3{
+.ap-idea-text h3{
     font-family: 'Signika', sans-serif;
     padding: 5px;
+    font-size: 20px;
     color: #fff;
 }
 
 
-/* Post Section */
+/* Pjesa e postimeve */
 
-#postimet{
+#ap-postimet{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -92,54 +93,58 @@ body{
     justify-content: space-around;
     padding: 50px 20px;
 }
-.post-left, .post-right{
+.ap-post-left, .ap-post-right{
     flex-basis: 50%;
 }
-.post-right{
+.ap-post-right{
     text-align: center;
 }
-.post-right img{
+.ap-post-right img{
     width: 70%;
 }
-.post-left h2{
+.ap-post-left h2{
     color: #ffff00;
     font-family: 'Signika', sans-serif;
     margin: 10px 0;
     text-transform: uppercase;
 }
-.post-left p{
+.ap-post-left p{
     color: #fff;
     margin-left: 5px;
     font-family: 'Roboto', sans-serif;
     text-align: justify;
 }
+
+/* Responsiviteti */
+
+
 @media screen and (max-width:768px){
-    .box{
+    .ap-box{
         flex-direction: column-reverse;
     }
-    .left, .right{
+    .ap-left, .ap-right{
         flex-basis: 100%;
         padding: 10px;
     }
-    .right{
+    .ap-right{
         padding: 20px;
     }
-    .right p {
+    .ap-right p {
         margin: 0;
     }
     /* Idea boxes */
-    #ideas{
+    #ap-ideas{
         flex-direction: column;
         height: auto;
     }
-    .idea-box{
+    .ap-idea-box{
         margin: 10px 0;
     }
     /* Post section */
-    .post-left, .post-right{
+    .ap-post-left, .ap-post-right{
         flex-basis: 100%;
     }
-    .post-right img{
+    .ap-post-right img{
         width: 100%;
         margin: 20px 0;
     }

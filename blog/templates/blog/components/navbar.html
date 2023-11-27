@@ -11,29 +11,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <nav class="navbar" id="navbar">
-    <div class="logo">
+  <nav class="ap-navbar" id="ap-navbar">
+    <div class="ap-logo">
       <a href="{% url 'home_view' %}">
       <h2><span>H</span>actico</h2>
     </a>
     </div>
-    <div class="mobile">
+    <div class="ap-mobile">
       <i class="fa-solid fa-bars" onclick="openMenu()"></i>
     </div>
-    <div class="links">
+    <div class="ap-links">
       <ul>
-        <div class="mobile"">
-          <i class="fa-solid fa-close" style="color: black;" onclick="closeMenu()"></i>
+        <div class="ap-mobile"">
+          <i class="fa-solid fa-close" onclick="closeMenu()"></i>
         </div>
-        <li><a href="{% url 'home_view' %}" class="cool-link">Home</a></li>
-        <li><a href="{% url 'posts' %}" class="cool-link">Posts</a></li>
-        <li><a href="#" class="cool-link">Contact</a></li>
+        <li><a href="{% url 'home_view' %}">Home</a></li>
+        <li><a href="{% url 'posts' %}">Posts</a></li>
+        <li><a href="#">Contact</a></li>
         {% if user.is_authenticated %} 
-        <div class="logout-mobile">
+        <div class="ap-logout-mobile">
           <a href="{% url 'logout' %}">Log out</a>
         </div>
         {% else %}
-        <div class="authentication-mobile">
+        <div class="ap-authentication-mobile">
           <a href="{% url 'login' %}">
           <i class="fa-solid fa-user"></i>
         </a>
@@ -42,19 +42,19 @@
       </ul>
     </div>
       {% if user.is_authenticated != True %}
-    <div class="authentication-wide">
+    <div class="ap-authentication-wide">
       <a href="{% url 'login' %}">
         <i class="fa-solid fa-user"></i>
       </a>
     </div>
       {% else %}
-      <div class="logout-wide">
+      <div class="ap-logout-wide">
         <a href="{% url 'logout' %}">Log out</a>
       </div>
     {% endif %}
   </nav>
   <script>
-    const menu = document.querySelector('.links');
+    const menu = document.querySelector('.ap-links');
     const openLinks = document.querySelector('.fa-bars');
     const closeLinks = document.querySelector('.fa-close');
 

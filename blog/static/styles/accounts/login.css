@@ -1,15 +1,15 @@
-.signup{
+.ap-signup{
     height: 100vh;    
 }
-.signbox{
+.ap-signbox{
     width: 80%;
-    height: 370px;
+    height: auto;
     background-color: #182337;
     margin: 20px auto;
     padding: 60px 30px;
     border-radius: 10px;
 }
-.sign-text h1{
+.ap-sign-text h1{
     text-align: center;
     color: #fff;
     margin-bottom: 20px;
@@ -21,7 +21,7 @@ form{
     text-align: center;
     padding: 20px 0;
 }
-.signbox input{
+.ap-signbox input{
     width: 50%;
     margin: 20px 0;
     padding: 10px 0;
@@ -31,10 +31,10 @@ form{
     border-radius: 10px;
     font-size: 17px;
 }
-.formbtn{
+.ap-formbtn{
     text-align: center;
 }
-.signbox button{
+.ap-signbox button{
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #ffff00;
@@ -45,25 +45,13 @@ form{
     padding: 10px 30px;
     cursor: pointer;
 }
-.redirect{
+.ap-redirect{
     margin: 15px 0;
     text-align: center;
 }
 
-#messages{
-    margin: 15px 0;
-    padding: 5px;
-    color: white;
-    border-radius: 4px;
-}
-.success{
-    background-color:#0d9b0d;
-}
-.error{
-    background-color:#e32323;
-}
 @media screen and (max-width:768px) {
-    .signbox input{
+    .ap-signbox input{
         width: 90%;
     }
 }

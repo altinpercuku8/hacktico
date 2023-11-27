@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
-.signup{
-    height: 100vh;    
+.ap-signup{
+    height: auto;    
 }
-.signbox{
+.ap-signbox{
     width: 80%;
-    height: 500px;
+    height: auto;
     background-color: #182337;
     margin: 20px auto;
     padding: 30px;
     border-radius: 10px;
 }
-.sign-text h1{
+.ap-sign-text h1{
     text-align: left;
     color: #fff;
     margin-bottom: 20px;
 }
-.sign-text h1 span{
+.ap-sign-text h1 span{
     color: #ffff00;
     font-family: 'Boogaloo', sans-serif;
 }
@@ -23,7 +23,7 @@ form{
     color: #fff;
     font-family: 'Roboto', sans-serif;
 }
-.signbox input{
+.ap-signbox input{
     width: 100%;
     margin: 7px 0;
     padding: 10px 0;
@@ -33,10 +33,10 @@ form{
     border-radius: 10px;
     font-size: 17px;
 }
-.formbtn{
+.ap-formbtn{
     text-align: center;
 }
-.signbox button{
+.ap-signbox button{
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #ffff00;
@@ -47,8 +47,12 @@ form{
     padding: 10px 30px;
     cursor: pointer;
 }
-.redirect{
+.ap-redirect{
     margin: 15px 0;
     text-align: center;
 }
-
+@media screen and (max-width:768px) {
+    .ap-signbox input{
+        width: 100%;
+    }
+}
