@@ -57,12 +57,13 @@
     const menu = document.querySelector('.ap-links');
     const openLinks = document.querySelector('.fa-bars');
     const closeLinks = document.querySelector('.fa-close');
-
     function openMenu(){
       menu.style.width = '100%';
+      document.body.style.overflow = 'hidden';
     }
     function closeMenu(){
       menu.style.width = '0';
+      document.body.style.overflow = 'initial';
     }
   </script>
 </body>

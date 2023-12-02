@@ -1,16 +1,35 @@
 {% extends 'blog/components/base.html' %}
-
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'styles/posts/posts.css' %}">
+{% endblock %}
 {% if user.is_authenticated %}
     {% block content %}
-        {% for post in posts %}
-        <hr>
-        <div class="posti">
-            {{ post.title }}<br>
-            {{ post.content }}<br>
-            <b>{{ post.author }}</b>
+    <div class="container my-4" style="z-index: 9999;">
+        <div class="create mx-2">
+            <p>
+                Wanna share something new? <a href="{% url 'add' %}">Click here.</a>
+            </p>
         </div>
-        <hr>
+        {% for post in posts %}
+        <div class="card my-2 bg-dark text-light">
+            <div class="card-body">
+                <div class="card-title text-capitalize">
+                    <h1>{{ post.title }}</h1>
+                </div>
+                <div class="card-text">
+                    {{ post.content }}
+                </div>
+                <div class="card-title">
+                    <div class="d-flex justify-content-between">
+                        <b>{{ post.author }}</b>
+                        <b>{{ post.date_created }}</b>
+                    </div>
+                </div>
+            </div>
+        </div>
         {% endfor %}
+    </div>
     {% endblock %}
 {% else %}
     {% url 'home_view' %}

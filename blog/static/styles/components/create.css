@@ -1,23 +1,15 @@
-button{
-    background-color: red;
+form input, textarea{
+    width: 100%;
+    outline: none;
 }
 
-.create-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+form label{
+    font-weight: bold;
+    margin: 10px 0;
 }
-.left , .right{
-    flex-basis: 50%;
-    margin: 0 auto;
+form input[type='text'], textarea{
+    padding: 10px 20px;
 }
-
-.left h2{
-    color: #00102d;
-    text-align: center;
-}
-
-.left h2 span{
-    color: #ffff00;
+form button{
+    padding: 10px 20;
 }

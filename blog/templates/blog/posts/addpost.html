@@ -6,16 +6,18 @@
 {% endblock %}
 {% block content %}
 
-<div class="create-section">
-    <div class="left">
-        <h2>Start <span>posting</span> with <span>us</span></h2>
-    </div>
-    <div class="right">
-        <form method="post" style="padding: 100px;">
-            {% csrf_token %}
-            {{ form }}
-            <button type="submit">Post</button>
-        </form>
+<div class="container">
+    <div class="row my-3">
+        <div class="ap-left col-lg-6 col-sm-12 p-4">
+            <img width="100%" src="{% static 'images/post.png' %}" alt="">
+        </div>
+        <div class="ap-right col-lg-6 col-sm-12 p-4">
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary px-4">Post</button>
+            </form>
+        </div>
     </div>
 </div>
 

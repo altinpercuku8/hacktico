@@ -89,11 +89,11 @@ i.fa-user{
         display: none;
     }
     .ap-links{
-        position: absolute;
+        position:absolute;
         top: 0;
         right: 0;
         width: 0;
-        overflow: hidden;
+        overflow-y: hidden;
         height: 100%;
         text-align: center;
         display: flex;
@@ -101,6 +101,7 @@ i.fa-user{
         align-items: center;
         background-color: white;
         transition: .3s;
+        z-index: 1;
     }
     .ap-links ul{
         margin: 0 auto;
