@@ -39,13 +39,17 @@ def login_page(request):
 def register_page(request):
     title = 'Register'
     form = CreateUserForm()
-
+    password1 = request.POST.get('password1')
+    password2 = request.POST.get('password2')
     if request.method == "POST":
         form = CreateUserForm(request.POST)
-        if form.is_valid():
-            form.save()
-            messages.success(request,f'Yay, Account created successfully.')
-            return redirect('login')
+        if password1 == password2:
+            if form.is_valid():
+                form.save()
+                messages.success(request,f'Yay, Account created successfully.')
+                return redirect('login')
+        else:
+            messages.error(request, f'Passwords do not match.')
     context = {
         'title':title,
         'form': form,
@@ -63,13 +67,18 @@ def log_out(request):
 # Shfaqja e postimeve
 
 def post_view(request):
+    user = request.user
     title = 'All posts'
     posts = PostModel.objects.all()
     context = {
         'posts':posts,
         'title':title,
     }
-    return render(request, 'blog/posts/posts.html', context)
+    # Nese perdoruesi nuk eshte i authentikuar athere qasja eshte e pamundur 
+    if user.is_authenticated:
+        return render(request, 'blog/posts/posts.html', context)
+    else:
+        return redirect('login')
 
 # Shfaqja e nje posti te caktuar
 
