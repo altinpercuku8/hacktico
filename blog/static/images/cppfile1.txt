@@ -1,0 +1,43 @@
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main(){
+    const double cmimi=3.20;
+    int i,dp;
+    double mes,totali,t1,t2,t3,t4,t5,t6,t7;
+    
+    int J[7];
+    double T[7];
+    
+    Numriibiletave:
+for(i=0;i<7;i++){
+    cout<<"Numri i biletave te shitura ne diten "<<i+1<<" :";
+    cin>>J[i];
+    }
+    Fitimet:
+ for(i=0;i<7;i++){
+     if (i<5)
+    T[i]=J[i]*3.20;
+    else 
+    T[i]=J[i]*(3.20-3.20*0.15);
+    }
+    for(i=0;i<7;i++){
+        cout<<"Fitimi per diten "<< i+1 <<" eshte : "<< T[i]<<endl;
+    }
+    Mesatarja:
+    mes=(T[0]+T[1]+T[2]+T[3]+T[4]+T[5]+T[6])/7;
+    Ditetepunes:
+    dp=J[0]+J[1]+J[2]+J[3]+J[4];
+
+    
+        cout<<"Nunri i biletave te shitura gjate diteve te punes: "<<dp<<endl;
+        cout<<"Mesatarja e fitimeve: "<<mes<<"$"<<endl;
+        int max=J[0];
+    for (i=1;i<7;i++){
+        if (J[i]>J[0])
+        max=J[i];
+    }
+    cout <<"Maksimalja eshte: "<<max;
+        
+         
+}

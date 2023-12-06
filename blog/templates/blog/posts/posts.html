@@ -6,7 +6,14 @@
 {% if user.is_authenticated %}
     {% block content %}
     <div class="container my-4" style="z-index: 9999;">
-        <div class="create mx-2">
+        <div class="ap-create mx-2">
+                {% for message in messages %}
+                    {% if message %}
+                    <div class="alert alert-warning" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endif %}
+                {% endfor %}
             <p>
                 Wanna share something new? <a href="{% url 'add' %}">Click here.</a>
             </p>
@@ -15,14 +22,18 @@
         <div class="card my-2 bg-dark text-light">
             <div class="card-body">
                 <div class="card-title text-capitalize">
-                    <h1>{{ post.title }}</h1>
+                    <a href="{% url 'post' post.id %}" class="text-decoration-none"><h1>{{ post.title }}</h1></a>
                 </div>
-                <div class="card-text">
-                    {{ post.content }}
+                <div class="card-text p-2">
+                    {% if post.content|length > 250 %}
+                        {{ post.content|slice:":250" }}... <a href="{% url 'post' post.id %}">Read More</a>
+                    {% else %}
+                        {{ post.content }}
+                    {% endif %}
                 </div>
                 <div class="card-title">
                     <div class="d-flex justify-content-between">
-                        <b>{{ post.author }}</b>
+                        <p>Posted by <b>{{ post.author }}</b></p>
                         <b>{{ post.date_created }}</b>
                     </div>
                 </div>

@@ -21,7 +21,6 @@ def login_page(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-        
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
@@ -82,9 +81,19 @@ def post_view(request):
 
 # Shfaqja e nje posti te caktuar
 
-def single_post(request):
-    pass
-
+def single_post(request, pk):
+    post = PostModel.objects.get(id=pk)
+    title = post.title
+    if request.user == post.author:
+        access = True
+    else:
+        access = False
+    context = {
+        'post': post,
+        'title': title,
+        'access': access,
+    }
+    return render(request, 'blog/posts/post.html', context)
 # Shtimi i post-eve
 
 def add_post(request):
@@ -110,5 +119,12 @@ def post_edit(request):
 
 # Fshirja e postimeve
 
-def post_delete(request):
-    pass
+def post_delete(request, pk):
+    user = request.user
+    post = PostModel.objects.get(id=pk)
+    if user == post.author:
+        post.delete()
+    else:
+        messages.error(request, f'Sorry you are not supposed to do that!')
+        return redirect('posts')
+    return redirect('posts')

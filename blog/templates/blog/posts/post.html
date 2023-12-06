@@ -1,0 +1,29 @@
+{% extends '../components/base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="container rounded p-4 my-4">
+        <div class="ap-image">
+            <img src="{{ post.image_url }}" class="object-fit-contain img-fluid" alt="Image not loaded">
+        </div>
+        <div class="ap-title my-4">
+            <h1>{{ post.title }}</h1>
+        </div>
+        <div class="ap-content my-3 p-4">
+            {{ post.content }}
+        </div>
+        {% if access %}
+            <div class="ap-access">
+                <div class="d-flex justify-content-between">
+                    <div class="ap-delete">
+                        <a href="{% url 'delete' post.id %}"><i class="fa-solid fa-trash text-danger"></i></a>
+                    </div>
+                    <div class="ap-edit">
+                        <i class="fa-solid fa-pen-to-square text-success"></i>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
