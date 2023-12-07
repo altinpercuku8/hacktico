@@ -27,7 +27,7 @@
         </div>
         <li><a href="{% url 'home_view' %}">Home</a></li>
         <li><a href="{% url 'posts' %}">Posts</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="{% url 'form_contact' %}">Contact</a></li>
         {% if user.is_authenticated %} 
         <div class="ap-logout-mobile">
           <a href="{% url 'logout' %}">Log out</a>

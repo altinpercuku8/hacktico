@@ -1,0 +1,15 @@
+form input, textarea{
+    width: 100%;
+    outline: none;
+}
+
+form label{
+    font-weight: bold;
+    margin: 10px 0;
+}
+form input[type='text'], textarea{
+    padding: 10px 20px;
+}
+form button{
+    padding: 10px 20;
+}

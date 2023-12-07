@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,600&display=swap');
+
+.ap-top-text h1{
+    font-family: 'Signika', sans-serif;
+}
+.my-img{
+    width: 100%;
+}
+form input, textarea{
+    width: 100%;
+    outline: none;
+}
+
+form label{
+    font-weight: bold;
+    margin: 10px 0;
+}
+form input[type='text'], textarea{
+    padding: 10px 20px;
+}
+button.btn.btn-primary {
+    width: 100%;
+    padding: 15px;
+}

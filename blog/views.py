@@ -1,9 +1,12 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm
-from .forms import CreateUserForm, PostModelForm
+from .forms import CreateUserForm, PostModelForm, ContactForm
 from .models import PostModel
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.core.mail import EmailMessage
+
+
 # Homepage-i
 
 def home_view(request):
@@ -114,9 +117,24 @@ def add_post(request):
 
 # Editimi i postimeve
 
-def post_edit(request):
-    pass
-
+def post_edit(request, pk):
+    title = 'Edit a post'
+    post = PostModel.objects.get(id=pk)
+    form = PostModelForm(instance=post)
+    if request.method == "POST":
+        form = PostModelForm(instance=post, data=request.POST)
+        if request.user == post.author:
+            if form.is_valid():
+                form.save()
+                return redirect('posts')
+        else:
+            pass
+    context = {
+        'title':title,
+        'form': form,
+        'post': post,
+    }
+    return render(request, 'blog/posts/editpost.html', context)
 # Fshirja e postimeve
 
 def post_delete(request, pk):
@@ -128,3 +146,35 @@ def post_delete(request, pk):
         messages.error(request, f'Sorry you are not supposed to do that!')
         return redirect('posts')
     return redirect('posts')
+
+# Kontakti
+
+def contact(request):
+    title = "Contact Us"
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            subject = form.cleaned_data['subject']
+            message = form.cleaned_data['message']
+            EmailMessage(
+                f"Contact form submittion from {name}",
+                message,
+                'form-response@hacktico.co',
+                ['altinpercuku8@gmail.com'],
+                [],
+                reply_to=[email]
+            ).send()
+            return redirect('done')
+    else:
+        form = ContactForm()
+    context = {
+        'title':title,
+        'form': form,
+    }
+        
+    return render(request, 'blog/contact.html', context)
+
+def done(request):
+    return render(request, 'blog/components/done.html')

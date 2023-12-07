@@ -1,0 +1,27 @@
+{% extends 'blog/components/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'styles/contact.css' %}">
+{% endblock %}
+{% block content %}
+    <div class="container my-4">
+        <div class="ap-top-text text-center">
+            <h1 class="text-dark my-4">
+                Contact us
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <img src="{% static 'images/contact.png' %}" class="my-img" alt="">
+            </div>
+            <div class="col-lg-6 col-sm-12">
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Send message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

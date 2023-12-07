@@ -13,6 +13,14 @@
         <div class="ap-content my-3 p-4">
             {{ post.content }}
         </div>
+        <div class="ap-author-date d-flex justify-content-between">
+            <div class="ap-author my-2">
+                Posted by <b>{{ post.author }}</b>
+            </div>
+            <div class="ap-date my-2">
+                {{ post.date_created }}
+            </div>
+        </div>
         {% if access %}
             <div class="ap-access">
                 <div class="d-flex justify-content-between">
@@ -20,7 +28,7 @@
                         <a href="{% url 'delete' post.id %}"><i class="fa-solid fa-trash text-danger"></i></a>
                     </div>
                     <div class="ap-edit">
-                        <i class="fa-solid fa-pen-to-square text-success"></i>
+                        <a href="{% url 'edit' post.id %}"><i class="fa-solid fa-pen-to-square text-success"></i></a>
                     </div>
                 </div>
             </div>
